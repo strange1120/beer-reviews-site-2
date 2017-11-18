@@ -70,7 +70,7 @@ public class BeerController {
 	}
 
 	@RequestMapping("/remove-tag")
-	public String removeTag(@RequestParam Long reviewId, @RequestParam Long tagId) {
+	public String removeTag(@RequestParam Long tagId, @RequestParam Long reviewId) {
 		Tag deleteTag = tagRepo.findOne(tagId);
 		Review review = reviewRepo.findOne(reviewId);
 		review.removeTag(deleteTag);
