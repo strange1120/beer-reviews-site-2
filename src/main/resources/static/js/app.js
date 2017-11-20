@@ -44,9 +44,11 @@ submitComment.addEventListener('click', function() {
 					commentDiv.appendChild(commentContent);
 				});
 
-var removeTagButton = document.getElementById('remove-tag-button');
-removeTagButton.addEventListener('click', function(event) {
+var removeTagButton = document.querySelectorAll('#remove-tag-button');
+for (var i = 0; i < removeTagButton.length; i++) {
+removeTagButton[i].addEventListener('click', function(event) {
 	if (!confirm('Are you sure you want to remove this tag?')) {
 		event.preventDefault();
 	}
 });
+}
