@@ -46,16 +46,17 @@
 	margin-bottom: 50px;
 }
 
-#comment-content {
-	width: 270%;
-	height: 300%;
-}
-
 .add-comment {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+}
+
+textarea {
+	display: flex;
+	width: 270%;
+	padding-bottom: 45px;
 }
 
 .homepage-content {
@@ -70,6 +71,7 @@ footer {
 	align-items: center;
 	justify-content: center;
 	margin-top: 30px;
+	grid-row: 5/6;
 }
 
 #reviews-content {
