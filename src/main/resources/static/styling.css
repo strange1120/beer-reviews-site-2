@@ -7,6 +7,12 @@ a {
 	color: black;
 }
 
+#remove-tag-button {
+	font-size: 13px;
+	color: white;
+	background-color: black;
+}
+
 #style-content li {
 	font-size: 25px;
 }

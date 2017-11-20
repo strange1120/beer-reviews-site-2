@@ -11,10 +11,51 @@
 .container {
 	display: grid;
 	grid-gap: var(- -grid-gap);
-	grid-template-rows: repeat(2, auto) 150px;
+	grid-template-rows: repeat(4, auto) 150px;
 	max-width: 1000px;
 	width: 90%;
 	margin: 0 auto;
+}
+
+.add-remove-tags {
+	display: flex;
+	grid-column: 1/-1;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.content-list-items {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.remove-tag {
+	display: flex;
+	width: 100%
+}
+
+.comment-form-section {
+	display: flex;
+	grid-column: 1/-1;
+	align-items: center;
+	flex-direction: column;
+	margin-bottom: 50px;
+}
+
+#comment-content {
+	width: 270%;
+	height: 300%;
+}
+
+.add-comment {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .homepage-content {
@@ -28,6 +69,7 @@ footer {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	margin-top: 30px;
 }
 
 #reviews-content {

@@ -1,5 +1,7 @@
 package beerreviewssite2;
 
+import java.util.Set;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
@@ -60,11 +62,19 @@ public class BeerController {
 	@RequestMapping("/add-tag")
 	public String addTag(@RequestParam(value = "id") Long id, String tag) {
 		if (!tag.equals("")) {
-			Tag newTag = new Tag(tag);
-			tagRepo.save(newTag);
+			Tag tagCreation = tagRepo.findByTag(tag);
+			if (tagCreation == null) {
+				tagCreation = new Tag(tag);
+				tagRepo.save(tagCreation);
+			}
+			// Tag newTag = new Tag(tag);
+			// tagRepo.save(newTag);
 			Review review = reviewRepo.findOne(id);
-			review.addTag(newTag);
-			reviewRepo.save(review);
+			Set<Tag> reviewTags = review.getTags();
+			if (!reviewTags.contains(tagCreation)) {
+				review.addTag(tagCreation);
+				reviewRepo.save(review);
+			}
 		}
 		return "redirect:/review?id=" + id;
 	}
@@ -76,6 +86,11 @@ public class BeerController {
 		review.removeTag(deleteTag);
 		reviewRepo.save(review);
 		return "redirect:/review?id=" + reviewId;
+	}
+
+	@RequestMapping("/remove-cancelled")
+	public String removeCancelled(@RequestParam(value = "id") Long id, String tag) {
+		return "redirect:/singleReview?id=" + id;
 	}
 
 	@RequestMapping("/")

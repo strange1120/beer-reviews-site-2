@@ -38,25 +38,14 @@
 					<a th:href="@{/tag(id=${tag.id})}" th:text="${tag.tag}"></a>
 				</h2>
 			</div>
-			
+
 		</div>
-		
-		<form class="add-tag" method="POST">
-		<label>Enter a tag to add: </label> 
-		<input type="text" name="tag" /> 
-		<button th:formaction="@{/add-tag}">Add</button>
-	</form>
-	
-	<form class="remove-tag" method="POST">
-		<label>Enter tag name to remove: </label> 
-		<input type="text" name="tag" /> 
-		<button th:formaction="@{/remove-tag}">Remove</button>
-	</form>
+
 		<footer>
-			<p>Copyright 2017 Sarah Strange</p>
+			<p>Copyright 2017</p>
 		</footer>
 
 	</div>
-	<script src="./js/app.js"></script>
+	<script src="js/app.js"></script>
 </body>
 </html>
