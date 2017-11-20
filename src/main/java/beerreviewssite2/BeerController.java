@@ -67,8 +67,6 @@ public class BeerController {
 				tagCreation = new Tag(tag);
 				tagRepo.save(tagCreation);
 			}
-			// Tag newTag = new Tag(tag);
-			// tagRepo.save(newTag);
 			Review review = reviewRepo.findOne(id);
 			Set<Tag> reviewTags = review.getTags();
 			if (!reviewTags.contains(tagCreation)) {
@@ -86,11 +84,6 @@ public class BeerController {
 		review.removeTag(deleteTag);
 		reviewRepo.save(review);
 		return "redirect:/review?id=" + reviewId;
-	}
-
-	@RequestMapping("/remove-cancelled")
-	public String removeCancelled(@RequestParam(value = "id") Long id, String tag) {
-		return "redirect:/singleReview?id=" + id;
 	}
 
 	@RequestMapping("/")

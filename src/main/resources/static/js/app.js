@@ -1,12 +1,3 @@
-var removeTagButton = document.getElementById('remove-tag-button');
-removeTagButton.addEventListener('click', function() {
-	if (confirm('Are you sure you want to remove this tag?')) {
-		removeTagButton.setAttribute('th:formaction',
-		'@{/remove-cancelled(id=${review.id})}');
-	}
-});
-
-
 var links = document.querySelectorAll('div a');
 
 for (var i = 0; i < links.length; i++) {
@@ -61,3 +52,9 @@ submitComment
 					commentDiv.appendChild(commentContent);
 				});
 
+var removeTagButton = document.getElementById('remove-tag-button');
+removeTagButton.addEventListener('click', function(event) {
+	if (!confirm('Are you sure you want to remove this tag?')) {
+		event.preventDefault();
+	}
+});
