@@ -21,30 +21,22 @@ copyrightText.addEventListener('mouseout', function() {
 var submitComment = document.getElementById('submit-comment');
 var commentNum = 0;
 
-submitComment
-		.addEventListener(
-				'click',
-				function() {
+submitComment.addEventListener('click', function() {
 					commentNum = commentNum + 1;
-					var commentContent = document
-							.getElementById('comment-content').value, commentSection = document
-							.getElementById('comment-section'), commentDiv = document
-							.createElement('div');
+					var commentContent = document.getElementById('comment-content').value, 
+					commentSection = document.getElementById('comment-section'), 
+					commentDiv = document.createElement('div');
+					
 					commentDiv.id = "commentNum" + commentNum;
 					commentDiv.innerHTML = commentContent;
 					commentDiv.style.border = '1px solid black';
 					var deleteCommentButton = document.createElement('button');
 					deleteCommentButton.id = 'commentNum' + commentNum;
 					deleteCommentButton.innerText = 'X';
-					deleteCommentButton
-							.addEventListener(
-									'click',
-									function() {
+					deleteCommentButton.addEventListener('click', function() {
 										if (confirm("Are you sure you want to delete that comment?")) {
-											var removeComment = document
-													.getElementById(this.id);
-											removeComment.parentNode
-													.removeChild(removeComment);
+											var removeComment = document.getElementById(this.id);
+											removeComment.parentNode.removeChild(removeComment);
 										}
 									})
 					commentDiv.appendChild(deleteCommentButton);
