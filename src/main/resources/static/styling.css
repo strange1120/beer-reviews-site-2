@@ -39,9 +39,7 @@ img {
 	width: 350px;
 }
 
-h2 {
-	font-size: 60px;
-}
+
 
 .container {
 	background-color: #DDDCDA;
@@ -68,6 +66,6 @@ ul {
 	list-style-type: none;
 }
 
-#style-list a {
+h2 {
 	font-size: 60px;
 }
